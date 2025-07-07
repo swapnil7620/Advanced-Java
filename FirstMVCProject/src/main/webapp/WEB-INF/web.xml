@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app>
+
+
+		<context-param>
+        	<param-name>driverName</param-name>
+        	<param-value>com.mysql.jdbc.Driver</param-value>
+        </context-param>
+        
+        <context-param>
+        	<param-name>dbUrl</param-name>
+        	<param-value>jdbc:mysql://localhost:3306/itpmarch2025db</param-value>
+        </context-param>
+        
+        <context-param>
+        	<param-name>dbUserName</param-name>
+        	<param-value>root</param-value>
+        </context-param>
+        
+        <context-param>
+        	<param-name>dbPassword</param-name>
+        	<param-value>Nice@7620</param-value>
+        </context-param>
+
+
+		<context-param>
+        	<param-name>l</param-name>
+        	<param-value>500</param-value>
+        </context-param>
+        
+        <context-param>
+        	<param-name>m</param-name>
+        	<param-value>600</param-value>
+        </context-param>
+        
+        
+ 	<servlet>
+        <servlet-name>kohli</servlet-name>
+        <servlet-class>Add</servlet-class>
+        <init-param>
+        	<param-name>x</param-name>
+        	<param-value>300</param-value>
+        </init-param>
+        
+        <init-param>
+        	<param-name>y</param-name>
+        	<param-value>400</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>kohli</servlet-name>
+        <url-pattern>/virat</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>apple</servlet-name>
+        <servlet-class>LoginServelt</servlet-class>
+        
+        <init-param>
+        	<param-name>a</param-name>
+        	<param-value>100</param-value>
+        </init-param>
+        
+        <init-param>
+        	<param-name>b</param-name>
+        	<param-value>200</param-value>
+        </init-param>    
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>apple</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+
+<filter>
+       <filter-name>ValidFilter</filter-name>
+       <filter-class>LoginValidationFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>ValidFilter</filter-name>
+        <url-pattern>/login</url-pattern>
+    </filter-mapping>
+    
+     <servlet>
+        <servlet-name>swapnil</servlet-name>
+        <servlet-class>LoginURL</servlet-class>
+    </servlet>
+    
+     <servlet-mapping>
+        <servlet-name>swapnil</servlet-name>
+        <url-pattern>/loginurlrw</url-pattern>
+    </servlet-mapping>
+    
+    
+   <servlet>
+        <servlet-name>shopping</servlet-name>
+        <servlet-class>ShoppingServlet</servlet-class>
+    </servlet>
+    
+     <servlet-mapping>
+        <servlet-name>shopping</servlet-name>
+        <url-pattern>/shop</url-pattern>
+    </servlet-mapping> 
+    
+    
+      <servlet>
+         <servlet-name>payment</servlet-name>
+        <servlet-class>PaymentServlet</servlet-class>
+    </servlet>
+    
+     <servlet-mapping>
+        <servlet-name>payment</servlet-name>
+        <url-pattern>/payment</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+         <servlet-name>Transaction</servlet-name>
+        <servlet-class>TransactionServlet</servlet-class>
+    </servlet>
+    
+     <servlet-mapping>
+               <servlet-name>Transaction</servlet-name>
+              <url-pattern>/Transaction</url-pattern>
+    </servlet-mapping>
+    
+  <servlet>
+         <servlet-name>LoginHFNew</servlet-name>
+        <servlet-class>LoginHFServlet</servlet-class>
+    </servlet>
+    
+     <servlet-mapping>
+        <servlet-name>LoginHFNew</servlet-name>
+        <url-pattern>/loginhfnew</url-pattern>
+    </servlet-mapping>   
+    
+    
+     <servlet>
+         <servlet-name>ShopHF</servlet-name>
+        <servlet-class>ShoppingHFServlet</servlet-class>
+    </servlet>
+    
+     <servlet-mapping>
+        <servlet-name>ShopHF</servlet-name>
+        <url-pattern>/shophf</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+          <servlet-name>AddEmployee</servlet-name>
+        <servlet-class>AddEmployeeServlet</servlet-class>
+    </servlet>
+    
+     <servlet-mapping>
+        <servlet-name>AddEmployee</servlet-name>
+        <url-pattern>/addemp</url-pattern>
+    </servlet-mapping>
+    
+       <servlet>
+          <servlet-name>ShowEmployees</servlet-name>
+        <servlet-class>ShowAllEmployees</servlet-class>
+    </servlet>
+    
+     <servlet-mapping>
+        <servlet-name>ShowEmployees</servlet-name>
+        <url-pattern>/showAllEmployees</url-pattern>
+    </servlet-mapping>
+      
+     
+    <servlet>
+        <servlet-name>DeleteEmployee</servlet-name>
+        <servlet-class>DeleteEmployeeServlet</servlet-class>
+    </servlet>
+    
+     <servlet-mapping>
+        <servlet-name>DeleteEmployee</servlet-name>
+        <url-pattern>/deleteemp</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    <servlet-name>UpdateEmployee</servlet-name>
+    <servlet-class>UpdateempServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>UpdateEmployee</servlet-name>
+    <url-pattern>/updateemp</url-pattern>
+</servlet-mapping>
+
+    
+      <servlet>
+        <servlet-name>LoginSession</servlet-name>
+        <servlet-class>LoginSessionServlet</servlet-class>
+    </servlet>
+    
+     <servlet-mapping>
+        <servlet-name>LoginSession</servlet-name>
+        <url-pattern>/loginsession</url-pattern>
+    </servlet-mapping>
+    
+      <servlet>
+         <servlet-name>ShopSession</servlet-name>
+        <servlet-class>ShopSessionServlet</servlet-class>
+    </servlet>
+    
+     <servlet-mapping>
+        <servlet-name>ShopSession</servlet-name>
+        <url-pattern>/shopsession</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>LogoutServlet</servlet-class>
+    </servlet>
+    
+     <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    
+      <servlet>
+        <servlet-name>VisitCount</servlet-name>
+        <servlet-class>VisitCountServlet</servlet-class>
+    </servlet>
+    
+     <servlet-mapping>
+        <servlet-name>VisitCount</servlet-name>
+        <url-pattern>/visitcount</url-pattern>
+    </servlet-mapping>
+    
+</web-app>
+
