@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:annotation-config />
+
+	 <bean id="e1" class="com.itp.model.Engine" >  <!--  autowire-candidate="false" -->
+		<constructor-arg value="Honda"></constructor-arg>
+		<constructor-arg value="12"></constructor-arg>
+		<constructor-arg value="1200"></constructor-arg>
+	</bean> 
+
+     <bean id="e2" class="com.itp.model.Engine">
+    	<constructor-arg value="Honda"></constructor-arg>
+    	<constructor-arg value="12"></constructor-arg>
+    	<constructor-arg value="1200"></constructor-arg>
+    </bean> 
+ 
+
+	<bean id="e3" class="com.itp.model.Engine" > <!-- autowire-candidate="true" -->
+
+		<property name="engineMfgName">
+			<value>Toyota</value>
+		</property>
+		
+		<property name="engineLiter">
+			<value>24</value>
+		</property>
+
+
+		<property name="engineCC">
+			<value>2400</value>
+		</property>
+	</bean>
+
+
+      <!--  <bean id="g1" class="com.itp.model.Gear">
+    	<constructor-arg value="Tata"></constructor-arg>
+    	<constructor-arg value="7"></constructor-arg>
+    	<constructor-arg value="Manual"></constructor-arg>
+    </bean>
+       -->
+
+	 <bean id="g1" class="com.itp.model.Gear">           <!-- autowire-candidate="false" -->
+		<constructor-arg value="Tata"></constructor-arg>
+		<constructor-arg value="7"></constructor-arg>
+		<constructor-arg value="Manual"></constructor-arg>
+	</bean>
+	
+	<!--  <bean id="g2" class="com.itp.model.Gear">           autowire-candidate="false"
+		<constructor-arg value="Totota"></constructor-arg>
+		<constructor-arg value="6"></constructor-arg>
+		<constructor-arg value="Auto"></constructor-arg>
+	</bean> -->
+	
+	<bean id="g2" class="com.itp.model.Gear"> 
+   
+		<property name="gearMfgName">
+			<value>Tesla</value>
+		</property>
+
+		<property name="gearLever">
+			<value>8</value>
+		</property>
+
+		<property name="gearType">
+			<value>Automatic</value>
+		</property>
+	</bean>
+
+	<bean id="c1" class="com.itp.model.Car"> 
+		<constructor-arg value="City"></constructor-arg>
+		<constructor-arg value="Honda"></constructor-arg>
+		<constructor-arg value="White"></constructor-arg>
+		<constructor-arg value="100.0"></constructor-arg>
+		
+		<!-- <constructor-arg ref="e1"></constructor-arg>
+		<constructor-arg ref="g1"></constructor-arg> -->
+	</bean>
+
+
+	<bean id="c2" class="com.itp.model.Car" >  <!-- autowire="byName"> -->
+
+        <!--  call by value -->
+        
+		<property name="carModelName">
+			<value>Innova</value>
+		</property>
+
+		<property name="carMfgName">
+			<value>Toyota</value>
+		</property>
+		<property name="carColor">
+			<value>red</value>
+		</property>
+		<property name="carPrice">
+			<value>2000.00</value>
+		</property>
+
+           <!--  call by reference -->
+         
+           
+		<!--   <property name="engine" ref="e1"></property>
+		<property name="gear" ref="g1"></property>  
+ -->
+	</bean>
+	
+	<bean id="P1" class="com.itp.model.Player"  scope="singleton"  > <!-- init-method="First" destroy-method="Last" -->	
+	   <property name="jno">
+	    <value>7</value>
+	</property>
+	
+	<property name="pname">
+	    <value>Dhoni</value>
+	</property>
+	<property name="matches">
+	    <value>100</value>
+	</property>
+	<property name="runs">
+	    <value>10000</value>
+	</property>
+	
+	</bean>
+</beans>
