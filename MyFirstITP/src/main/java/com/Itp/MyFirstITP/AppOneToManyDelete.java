@@ -5,11 +5,10 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import com.Itp.model.Customer;
-import com.Itp.model.Customer.CustomerBuilder;
+import com.Itp.model.Dept;
 
 
-public class App4Update 
+public class AppOneToManyDelete 
 {
     public static void main( String[] args )
     {
@@ -21,13 +20,8 @@ public class App4Update
     	Transaction tx=session.beginTransaction();
     	
  
-       Customer customer1 = session.get(Customer.class,5);	
-       customer1.setCustomerName("Yuvraj");
-        
-       // To Update the data 
-       session.saveOrUpdate(customer1);
-    
-    
+    	Dept d1 = session.get(Dept.class, 2);
+    	session.delete(d1);
     	tx.commit();
     	
         

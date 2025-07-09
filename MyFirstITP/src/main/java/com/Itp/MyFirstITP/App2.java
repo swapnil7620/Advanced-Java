@@ -18,10 +18,22 @@ public class App2
     	Session session=factory.openSession();
     	Transaction tx=session.beginTransaction();
     	
+    	
+    	Session session2=factory.openSession();
+    	Transaction tx2=session2.beginTransaction();
+    	
+    	
+    	
 
-
-    	Player player= session.load(Player.class, 13);
+        // To fetch the data from data base -- load and get method are used 
+    	//get is used when we are sure about data is present in  our database 
+    	// Load is used when we are not sure about data is present or not
+    	// get return null , load will throws an exception if data is not available
+    	
+    	Player player= session.get(Player.class,1);
     	System.out.println(player);
+    	Player player2= session2.get(Player.class,1);
+    	System.out.println(player2);
           
           session.close();
 

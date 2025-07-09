@@ -35,12 +35,24 @@ public class App3
     			.CustomerNumber("88888888")
     			.build();
     	      
-    	session.save(c2);
+
+    	
+    	
+    	
+    	Customer c3 = Customer.builder()
+    			.CustomerID(8)
+    			.CustomerName("Pujara")
+    			.CustomerCity("Pune")
+    			.CustomerNumber("1111111111")
+    			.build();
     	
     	// To delete the data from database
 //    	session.delete(c2);
     	
-    	session.save(customer);
+//    	session.save(c2);
+//    	session.save(customer);
+    	
+    	session.save(c3);
     	tx.commit();
     	
         

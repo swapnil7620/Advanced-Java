@@ -26,7 +26,7 @@ public class App
     	Player player2 = new Player("Shubham", 80, 9000);
     	
    
-    	
+    	// Save method is used to insert the data into the database
     	session.save(player);
     	session.save(player1);
     	session.save(player2);
