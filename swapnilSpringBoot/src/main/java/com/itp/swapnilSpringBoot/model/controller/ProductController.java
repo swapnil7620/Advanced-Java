@@ -5,9 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -181,5 +183,23 @@ public class ProductController {
  	@GetMapping("productBySortAndPagination/{pageNumber}/{pageSize}/{fieldName}")
  	public Page<Product> productBySortAndPagination(@PathVariable int pageNumber,@PathVariable int pageSize, @PathVariable String fieldName){
  		return productService.productBySortAndPagination(pageNumber,pageSize,fieldName);
+ 	}
+ 	
+ 	@DeleteMapping("/deleteProduct/{prodID}")
+ 	public String deleteProduct(@PathVariable int prodID) {
+ 		 productService.deleteProduct(prodID);
+ 		 return "product deleted";
+ 	}
+ 	
+ 	@GetMapping("/getSingleProduct2/{prodId}")
+	public Product getSingleProduct2(@PathVariable int prodId)
+	{
+		return productService.getSingleProduct2(prodId);
+	}
+ 	
+ 	@PutMapping("/updateProduct/{prodID}")
+ 	public Product updateProduct(@PathVariable int prodID , @RequestBody Product newValues) {
+ 		return productService.updateProduct(prodID,newValues);
+ 		
  	}
 }
